@@ -25,7 +25,7 @@
     padding: 5px 15px;
     margin: 0;
     border: unset;
-    background: var(--primary-color);
+    background-color: transparent;
     font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
     color: var(--text-color-2);
@@ -48,33 +48,7 @@
     background: var(--primary-color);
 }
 
-.br-top {
-    top: 0;
-    height: 10px;
-    left: 0;
-    width: 100%;
-}
 
-.br-bottom {
-    bottom: 0;
-    left: 0;
-    height: 10px;
-    width: 100%;
-}
-
-.br-right {
-    width: 10px;
-    right: 0;
-    top: 0;
-    height: 100%;
-}
-
-.br-left {
-    width: 10px;
-    left: 0;
-    top: 0;
-    height: 100%;
-}
 
 .cortina__wrapper-menu {
     position: relative;
@@ -177,14 +151,14 @@
     font-size: 2rem;
     display: inline-block;
     position: relative;
-    transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s;
+    transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s; 
     padding: 4px 0px;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
 
 .the_menu .menu_item>a:hover {
-    color: var(--text-color-3);
+    color: var(--text-color-4);
 }
 
 @media (min-width: 768px) {

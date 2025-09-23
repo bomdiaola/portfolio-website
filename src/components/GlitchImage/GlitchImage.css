@@ -1,0 +1,88 @@
+/* src/components/GlitchImage/GlitchImage.css */
+.glitch-wrapper {
+  width: 520px;  /* Aumentamos un poco el tamaño */
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Le damos la forma hexagonal */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+  /* Añadimos el resplandor de neón */
+  filter: drop-shadow(0 0 8px #00FF00);
+
+  /* Añadimos una transición suave para el hover */
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor por encima */
+.glitch-wrapper:hover {
+  filter: drop-shadow(0 0 15px #00FF00) drop-shadow(0 0 25px #00FF00);
+  transform: scale(1.05);
+  cursor: default ;
+}
+
+.glitch-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+/* Las animaciones del glitch se mantienen igual */
+.glitch-image::before,
+.glitch-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+}
+
+.glitch-image::before {
+  animation: glitch-effect 0.8s infinite linear alternate-reverse;
+  mix-blend-mode: screen; 
+  filter: hue-rotate(-90deg);
+}
+
+.glitch-image::after {
+  animation: glitch-effect 0.6s infinite linear alternate-reverse;
+  mix-blend-mode: screen;
+  filter: hue-rotate(90deg);
+}
+
+@keyframes glitch-effect {
+  0% {
+    transform: translateX(0);
+    clip-path: inset(50% 0 49% 0);
+  }
+  25% {
+    transform: translateX(-10px);
+    clip-path: inset(20% 0 79% 0);
+  }
+  50% {
+    transform: translateX(10px);
+    clip-path: inset(90% 0 9% 0);
+  }
+  75% {
+    transform: translateX(-15px);
+    clip-path: inset(40% 0 59% 0);
+  }
+  100% {
+    transform: translateX(5px);
+    clip-path: inset(70% 0 29% 0);
+  }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skewX(0deg); }
+  95% { transform: skewX(0deg); }
+  100% { transform: skewX(2deg); }
+}

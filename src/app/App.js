@@ -9,6 +9,8 @@ import AppRoutes from "./routes";
 import Headermain from "../header";
 import "./App.css";
 
+import MatrixRain from '../components/Matrix/Matrix';
+
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -21,6 +23,13 @@ const ScrollToTop = withRouter(_ScrollToTop);
 export default function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      {/* Añadimos la animación aquí. 
+        Como usa posicionamiento fijo y z-index negativo,
+        se quedará de fondo en toda la aplicación.
+      */}
+      <MatrixRain color="#00FF00" />
+
+      {/* El resto de tu aplicación se renderiza por encima del fondo */}
       <ScrollToTop>
         <Headermain />
         <AppRoutes />

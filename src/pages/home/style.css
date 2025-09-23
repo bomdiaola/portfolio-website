@@ -44,11 +44,6 @@ section {
     }
 }
 
-.intro_sec .text,
-.intro_sec .h_bg-image {
-    width: 50%;
-}
-
 @media (max-width:991.98px) {
     .intro_sec .text,
     .intro_sec .h_bg-image {
@@ -57,7 +52,7 @@ section {
 }
 
 .intro_sec .intro {
-    max-width: 450px;
+    max-width: 350px;
     margin: 0 auto;
 }
 
@@ -171,7 +166,7 @@ section {
 }
 
 #button_h:hover {
-    color: var(--primary-color)
+    color: var(--primary-color--1);
 }
 
 .intro_sec .h_bg-image .block {

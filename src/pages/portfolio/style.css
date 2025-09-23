@@ -1,80 +1,140 @@
-.po_items_ho {
-    column-width: 15em;
-    -moz-column-width: 15em;
-    -webkit-column-width: 15em;
-    column-gap: 4rem;
-    -moz-column-gap: 4rem;
-    -webkit-column-gap: 4rem;
-}
+/* src/pages/portfolio/style.css */
 
-.po_item {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin: 0.5rem auto;
-    position: relative;
-    background: var(--secondary-color);
-    padding: 6px;
-    border: 1px solid var(--secondary-color);
-    transition: 0.3s ease;
-    font-size: 0;
-    min-height: 300px;
-}
-
-.po_item img {
-    max-width: 100%;
-}
-
-.po_item .content {
-    position: absolute;
-    height: 0;
-    width: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--overlay-color);
-    z-index: 1;
+.project-showcase-list {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    transition: 0.3s ease-in-out;
-    opacity: 0;
-    border: 1px solid black;
+    gap: 3rem; 
 }
 
-.po_item .content {
-    opacity: 0;
-    transition-delay: 1s;
-    transition: 0.3s ease;
-    font-size: 20px;
+/* --- Contenedor Principal del Proyecto --- */
+.project-showcase-item {
+    display: flex;
+    flex-direction: column; 
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden; /* ¡Muy importante! Mantiene todo dentro de las esquinas redondeadas */
 }
 
-.po_item:hover {
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);
+.project-showcase-item:hover {
+    border-color: #00FF00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
 }
 
-.po_item:hover .content {
-    height: calc(100% - 30px);
-    width: calc(100% - 30px);
-    opacity: 1;
+/* --- Contenido de Texto --- */
+.project-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem; /* Añadimos el padding solo al texto */
 }
 
-.po_item:hover .content {
-    opacity: 1;
-    color: var(--secondary-color);
+.project-title {
+    color: #00FF00; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
-.po_item .content a {
-    background: var(--bg-color);
-    border: solid 1px var(--text-color);
-    padding: 4px 8px;
-    text-align: center;
+.project-description p {
+    color: #8892b0; 
     font-size: 1rem;
+    line-height: 1.6;
 }
 
-.po_item .content a:hover {
+.project-features h4 {
+    color: #ccd6f6; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.project-features ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.project-features li {
+    color: #8892b0;
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-features li::before {
+    content: '▹'; 
+    position: absolute;
+    left: 0;
+    color: #00FF00;
+}
+
+/* --- Pie de la tarjeta de texto --- */
+.project-footer {
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+}
+
+.project-tech-list span {
+    color: #7DF9FF; 
+    background-color: #1a3a63;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+}
+
+.project-view-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    color: #00FF00;
+    background-color: transparent; 
+    border: 1px solid #00FF00;
+    border-radius: 8px;
     text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.project-view-button:hover {
+    background-color: rgba(0, 255, 0, 0.1); 
+}
+
+/* --- Contenido de la Imagen --- */
+.project-image-content img {
+    width: 100%;
+    height: 100%; /* La imagen ocupa toda la altura de su contenedor */
+    object-fit: cover; /* La imagen cubre el espacio sin deformarse */
+    display: block;
+}
+
+/* --- Layout para pantallas grandes (Desktop) --- */
+@media (min-width: 992px) {
+    .project-showcase-item {
+        flex-direction: row; 
+        height: 480px; /* Altura fija para las tarjetas */
+    }
+
+    .project-showcase-item.reversed {
+        flex-direction: row-reverse;
+    }
+
+    .project-text-content {
+        width: 50%; /* El texto ocupa la mitad */
+    }
+    .project-image-content {
+        width: 50%; /* La imagen ocupa la otra mitad */
+    }
+    .project-view-button {
+        width: max-content; 
+    }
 }
