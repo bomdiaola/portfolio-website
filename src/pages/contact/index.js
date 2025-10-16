@@ -37,7 +37,10 @@ export const ContactUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          // Log de éxito solo en desarrollo
+          if (process.env.NODE_ENV === "development") {
+            console.log("EmailJS Success:", result.text);
+          }
           setFormdata({
             loading: false,
             alertmessage: "SUCCESS! , Looking forward to reading your email.",
@@ -46,7 +49,10 @@ export const ContactUs = () => {
           });
         },
         (error) => {
-          console.log(error.text);
+          // Log de error solo en desarrollo
+          if (process.env.NODE_ENV === "development") {
+            console.error("EmailJS Error:", error.text);
+          }
           setFormdata({
             alertmessage: `Failed to send!,${error.text}`,
             variant: "danger",

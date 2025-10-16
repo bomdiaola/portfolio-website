@@ -1,140 +1,463 @@
 /* src/pages/portfolio/style.css */
 
+/* === TABS NAVIGATION === */
+.portfolio-tabs {
+  border-bottom: 2px solid #00ff00;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-tabs .nav-link {
+  color: #8892b0;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+}
+
+.portfolio-tabs .nav-link:hover {
+  color: #00ff00;
+  border-bottom-color: rgba(0, 255, 0, 0.3);
+  background: transparent;
+}
+
+.portfolio-tabs .nav-link.active {
+  color: #00ff00;
+  border-bottom-color: #00ff00;
+  background: transparent;
+}
+
+/* === SECTION INTROS === */
+.section-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-intro h2 {
+  color: #ccd6f6;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-intro p {
+  color: #8892b0;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* === COMING SOON MESSAGE === */
+.coming-soon-message {
+  color: #64ffda !important;
+  font-size: 2rem !important;
+  font-weight: 600;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.05) 0%,
+    rgba(0, 255, 0, 0.05) 100%
+  );
+  border: 2px dashed #233554;
+  border-radius: 12px;
+  margin: 2rem 0;
+  letter-spacing: 2px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* === SECTION CONTAINERS === */
+.research-section,
+.ctf-section,
+.bugbounty-section {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.competitions-container,
+.recognitions-container,
+.articles-container {
+  margin-top: 3rem;
+}
+
+.competitions-container h3,
+.recognitions-container h3,
+.articles-container h3 {
+  color: #ccd6f6;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #233554;
+}
+
+/* === PROJECT SHOWCASE (EXISTING) === */
 .project-showcase-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 /* --- Contenedor Principal del Proyecto --- */
+/* 
+  ESTRUCTURA FLEX: La tarjeta usa flexbox para organizar contenido de texto e imagen
+  en móvil (column) y en desktop (row con 50/50)
+*/
 .project-showcase-item {
-    display: flex;
-    flex-direction: column; 
-    background-color: #000000;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-    overflow: hidden; /* ¡Muy importante! Mantiene todo dentro de las esquinas redondeadas */
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden; /* Mantiene todo dentro de las esquinas redondeadas */
+  min-height: 400px; /* Altura mínima para mantener consistencia visual */
 }
 
 .project-showcase-item:hover {
-    border-color: #00FF00;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  border-color: #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
 }
 
 /* --- Contenido de Texto --- */
+/* 
+  CLAVE PARA LA SOLUCIÓN:
+  - display: flex con flex-direction: column permite usar margin-top: auto
+  - gap: 1.5rem mantiene espaciado consistente entre secciones
+  - min-height: 100% asegura que el contenido ocupe toda la altura disponible
+*/
 .project-text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem; /* Añadimos el padding solo al texto */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  min-height: 100%; /* Ocupa toda la altura disponible en el contenedor padre */
+
+  /* 
+    IMPORTANTE: Este contenedor es el padre de .project-footer
+    El margin-top: auto en .project-footer solo funciona si este
+    contenedor es un flex container con suficiente altura
+  */
 }
 
 .project-title {
-    color: #00FF00; 
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: capitalize;
+  color: #00ff00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .project-description p {
-    color: #8892b0; 
-    font-size: 1rem;
-    line-height: 1.6;
+  color: #8892b0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .project-features h4 {
-    color: #ccd6f6; 
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .project-features ul {
-    list-style: none;
-    padding-left: 1rem;
+  list-style: none;
+  padding-left: 1rem;
 }
 
 .project-features li {
-    color: #8892b0;
-    position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.5rem;
+  color: #8892b0;
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-features li::before {
-    content: '▹'; 
-    position: absolute;
-    left: 0;
-    color: #00FF00;
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #00ff00;
 }
 
 /* --- Pie de la tarjeta de texto --- */
+/* 
+  PROBLEMA RESUELTO #1: Botón "View Project" siempre en la misma posición
+  SOLUCIÓN: margin-top: auto empuja el footer hacia abajo, manteniendo
+  el botón siempre en la parte inferior de la tarjeta independientemente
+  del contenido variable (descripción, features, etc.)
+*/
 .project-footer {
-    margin-top: auto; 
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  margin-top: auto; /* Empuja el footer al final del contenedor flex */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem; /* Espacio adicional antes del footer */
 }
 
+/* 
+  PROBLEMA RESUELTO #2: Botones de tecnologías se desbordan de la tarjeta
+  SOLUCIÓN: flex-wrap: wrap permite que los botones salten a la siguiente línea
+  automáticamente cuando no hay espacio horizontal suficiente
+*/
 .project-tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap; /* Permite salto de línea automático */
+  gap: 0.75rem; /* Espaciado consistente entre botones */
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  /* max-width: 100%; Ya implícito por el contenedor padre */
 }
 
+/* 
+  PROBLEMA RESUELTO #3: Botones de tecnología con nombres largos
+  SOLUCIÓN: word-break y max-width previenen desbordamiento horizontal,
+  permitiendo que el texto se ajuste dentro del botón si es necesario
+*/
 .project-tech-list span {
-    color: #7DF9FF; 
-    background-color: #1a3a63;
-    padding: 0.3rem 0.7rem;
-    border-radius: 5px;
+  color: #7df9ff;
+  background-color: #010d1d;
+  padding: 0.4rem 0.8rem; /* Padding ligeramente aumentado para mejor legibilidad */
+  border-radius: 5px;
+  white-space: nowrap; /* Evita saltos de línea dentro del botón */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+  text-overflow: ellipsis; /* Agrega "..." si el texto es muy largo */
+  max-width: 100%; /* Previene que un botón individual sea más ancho que su contenedor */
+  flex-shrink: 0; /* Previene que los botones se compriman demasiado */
+
+  /* Para debugging: si ves un botón cortado, aumenta el ancho del contenedor padre */
+  /* o considera abreviar los nombres de tecnologías muy largos en portfolioData.js */
 }
 
+/* 
+  CONSISTENCIA VISUAL: El botón "View Project" mantiene su estilo
+  pero ahora siempre estará en la misma posición vertical gracias al
+  margin-top: auto del .project-footer
+*/
 .project-view-button {
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    color: #00FF00;
-    background-color: transparent; 
-    border: 1px solid #00FF00;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  color: #00ff00;
+  background-color: transparent;
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0; /* Previene que el botón se comprima */
 }
 
 .project-view-button:hover {
-    background-color: rgba(0, 255, 0, 0.1); 
+  background-color: rgba(0, 255, 0, 0.1);
+  border-color: #64ffda; /* Color hover ligeramente diferente para feedback visual */
+  color: #64ffda;
 }
 
 /* --- Contenido de la Imagen --- */
 .project-image-content img {
-    width: 100%;
-    height: 100%; /* La imagen ocupa toda la altura de su contenedor */
-    object-fit: cover; /* La imagen cubre el espacio sin deformarse */
-    display: block;
+  width: 100%;
+  height: 100%; /* La imagen ocupa toda la altura de su contenedor */
+  object-fit: cover; /* La imagen cubre el espacio sin deformarse */
+  display: block;
 }
 
 /* --- Layout para pantallas grandes (Desktop) --- */
+/* 
+  RESPONSIVE DESIGN:
+  - En desktop (>992px), la tarjeta se divide en 2 columnas: texto (50%) + imagen (50%)
+  - La altura fija (min-height) asegura que todas las tarjetas tengan el mismo tamaño
+  - El botón "View Project" siempre estará en la parte inferior gracias a margin-top: auto
+*/
 @media (min-width: 992px) {
-    .project-showcase-item {
-        flex-direction: row; 
-        height: 480px; /* Altura fija para las tarjetas */
-    }
+  .project-showcase-item {
+    flex-direction: row;
+    min-height: 480px; /* Altura mínima consistente para todas las tarjetas */
+    height: auto; /* Permite crecer si hay mucho contenido */
+  }
 
-    .project-showcase-item.reversed {
-        flex-direction: row-reverse;
-    }
+  .project-showcase-item.reversed {
+    flex-direction: row-reverse;
+  }
 
-    .project-text-content {
-        width: 50%; /* El texto ocupa la mitad */
-    }
-    .project-image-content {
-        width: 50%; /* La imagen ocupa la otra mitad */
-    }
-    .project-view-button {
-        width: max-content; 
-    }
+  .project-text-content {
+    width: 50%; /* El texto ocupa exactamente la mitad */
+    min-height: 480px; /* Coincide con la altura mínima del contenedor */
+  }
+
+  .project-image-content {
+    width: 50%; /* La imagen ocupa la otra mitad */
+  }
+
+  .project-view-button {
+    width: max-content; /* En desktop, el botón solo ocupa el espacio necesario */
+    min-width: 200px; /* Ancho mínimo para mantener legibilidad */
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* 
+    AJUSTE ADICIONAL: Si tienes MUCHAS tecnologías (más de 6-7),
+    considera limitar la lista o usar un diseño de "scroll horizontal"
+    Para eso, descomenta las siguientes líneas:
+  */
+  /*
+  .project-tech-list {
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+  */
 }
+
+/* === RESPONSIVE FOR TABS === */
+@media (max-width: 768px) {
+  .portfolio-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portfolio-tabs .nav-link {
+    text-align: center;
+    border-bottom: 1px solid #233554;
+  }
+
+  .portfolio-tabs .nav-link.active {
+    border-left: 3px solid #00ff00;
+    border-bottom: 1px solid #233554;
+  }
+
+  .section-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-intro p {
+    font-size: 1rem;
+  }
+}
+
+/* === RESPONSIVE FOR PROJECTS (MOBILE & TABLET) === */
+/* 
+  MÓVIL Y TABLET: Optimización de espacio y legibilidad
+*/
+@media (max-width: 991px) {
+  .project-showcase-item {
+    min-height: auto; /* Altura flexible en móvil */
+  }
+
+  .project-text-content {
+    padding: 1.5rem; /* Menos padding en pantallas pequeñas */
+    min-height: auto;
+  }
+
+  /* Los botones de tecnología ocupan menos espacio vertical en móvil */
+  .project-tech-list {
+    gap: 0.5rem;
+  }
+
+  .project-tech-list span {
+    font-size: 0.75rem; /* Texto ligeramente más pequeño en móvil */
+    padding: 0.35rem 0.65rem;
+  }
+
+  /* El botón "View Project" ocupa todo el ancho en móvil para mejor UX */
+  .project-view-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* 
+  TABLET (768px - 991px): Ajustes intermedios
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-showcase-item {
+    min-height: 350px;
+  }
+
+  .project-image-content {
+    min-height: 250px; /* Altura mínima para la imagen en tablet */
+  }
+}
+
+/* 
+  MÓVIL PEQUEÑO (< 480px): Optimización adicional
+*/
+@media (max-width: 480px) {
+  .project-text-content {
+    padding: 1rem;
+    gap: 1rem; /* Menos espacio entre secciones */
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .project-features h4 {
+    font-size: 1rem;
+  }
+
+  /* En móviles muy pequeños, los botones de tecnología pueden tener 2 columnas */
+  .project-tech-list {
+    justify-content: space-between;
+  }
+
+  .project-tech-list span {
+    flex: 0 0 calc(50% - 0.25rem); /* 2 columnas con gap */
+    text-align: center;
+  }
+}
+
+/* 
+  ============================================
+  GUÍA DE MANTENIMIENTO FUTURO
+  ============================================
+  
+  1. AGREGAR MÁS TECNOLOGÍAS:
+     - Los botones se ajustan automáticamente con flex-wrap
+     - Si tienes más de 8-10 tecnologías, considera abreviar nombres
+       (ej: "JavaScript" → "JS", "TypeScript" → "TS")
+  
+  2. CAMBIAR LA ALTURA DE LAS TARJETAS:
+     - Modifica min-height en .project-showcase-item (línea ~120)
+     - Valores recomendados: 400px (compacto), 480px (actual), 550px (espacioso)
+  
+  3. CAMBIAR EL LAYOUT 50/50 EN DESKTOP:
+     - Modifica width en .project-text-content y .project-image-content
+     - Ejemplo 60/40: texto=60%, imagen=40%
+  
+  4. SI LOS BOTONES SIGUEN DESBORDANDO:
+     - Verifica que los nombres en portfolioData.js no sean excesivamente largos
+     - Considera usar abreviaturas o siglas
+     - Revisa que no haya padding/margin adicional en contenedores padres
+  
+  5. AJUSTAR POSICIÓN DEL BOTÓN "VIEW PROJECT":
+     - El botón está fijado al fondo con margin-top: auto
+     - Para más separación, aumenta padding-top en .project-footer
+     - Para menos separación, reduce gap en .project-text-content
+*/

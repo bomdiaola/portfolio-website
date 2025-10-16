@@ -3,6 +3,7 @@
 ## ✅ Estado Actual
 
 **Favicon configurado correctamente** con soporte completo para:
+
 - ✅ Navegadores modernos (Chrome, Firefox, Edge, Safari) - `favicon.svg`
 - ✅ Navegadores antiguos (IE11, Edge Legacy) - `favicon.ico`
 - ✅ Dispositivos iOS (iPhone, iPad) - `apple-touch-icon.png`
@@ -29,11 +30,13 @@ public/
 ### Método 1: RealFaviconGenerator (Recomendado)
 
 1. **Prepara tu diseño:**
+
    - Crea un SVG o PNG de al menos 512x512px
    - Usa colores que contrasten con fondos claros y oscuros
    - Asegúrate que sea reconocible en tamaños pequeños (16x16)
 
 2. **Genera los favicons:**
+
    - Ve a: https://realfavicongenerator.net/
    - Sube tu archivo de diseño
    - Configura las opciones:
@@ -43,6 +46,7 @@ public/
      - **macOS Safari:** Mantén la configuración por defecto
 
 3. **Descarga y reemplaza:**
+
    ```bash
    # Descomprime el paquete descargado
    # Copia TODOS los archivos a /public
@@ -87,12 +91,14 @@ copy tu-diseño.svg favicon.svg
 ### Pruebas Locales:
 
 1. **Limpia la caché del navegador:**
+
    ```
    Chrome: Ctrl + Shift + Delete → Imágenes y archivos en caché
    Firefox: Ctrl + Shift + Delete → Caché
    ```
 
 2. **Verifica en múltiples navegadores:**
+
    - Chrome/Edge: Debería mostrar `favicon.svg`
    - Firefox: Debería mostrar `favicon.svg`
    - Safari: Debería mostrar `favicon.svg` o `favicon.ico`

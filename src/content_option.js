@@ -25,7 +25,7 @@ const introdata = {
 const dataabout = {
   title: "Who am I?",
   aboutme:
-    " I'm Joan Garcés, a passionate technologist and cybersecurity enthusiast. With a deep fascination for the intricacies of technology, I thrive on exploring innovative solutions to complex problems. My journey in the tech world has been driven by an insatiable curiosity and a commitment to staying at the forefront of emerging trends. I believe in the power of technology to transform lives and am dedicated to leveraging my skills to make a positive impact in the digital realm.",
+    "Greetings. I'm Joan Garcés, a senior studying computer engineering with a focus on cybersecurity. An inventive mindset and a love of locating, evaluating, and reducing digital vulnerabilities are what propel my work. Having a strong background in full-stack development with frameworks like Angular and Django, I have a unique perspective on the architecture of an application, which directly influences how I approach penetration testing. When I'm not working on security, I love to study, research, and ride motorcycles. I appreciate you looking through my portfolio.",
 };
 const worktimeline = [
   {
@@ -131,81 +131,9 @@ const skills = [
   },
 ];
 
-const dataportfolio = [
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/800/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/600/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/300/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/700/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-
-  {
-    img: "https://picsum.photos/400/600/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/300/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/550/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/700/?grayscale",
-    description:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-];
+// ❌ ELIMINADO: Variable dataportfolio (78 líneas)
+// Razón: Nunca utilizada en el proyecto, contenía datos placeholder
+// Los datos reales del portfolio están en src/portfolioData.js
 
 const contactConfig = {
   YOUR_EMAIL: "joan.g.maldonado@gmail.com",
@@ -224,7 +152,7 @@ const socialprofils = {
 export {
   meta,
   dataabout,
-  dataportfolio,
+  // dataportfolio, ❌ ELIMINADO - Variable no utilizada
   worktimeline,
   skills,
   introdata,

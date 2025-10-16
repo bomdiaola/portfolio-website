@@ -1,0 +1,410 @@
+/* src/components/BugBountyCard/BugBountyCard.css */
+
+/* 
+  CAMBIO APLICADO: Fondo negro (#000000) para unificar con Technical Projects
+  ANTES: background: #0a192f (azul oscuro)
+  AHORA: background: #000000 (negro puro)
+*/
+.bugbounty-recognition-card {
+  background: #000000;
+  border: 1px solid #233554;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.bugbounty-recognition-card:hover {
+  border-color: #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.recognition-header {
+  margin-bottom: 1rem;
+}
+
+.recognition-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 
+  CAMBIO APLICADO: Título en verde neón (#00ff00) para coherencia con Technical Projects
+  ANTES: color: #ccd6f6 (gris azulado)
+  AHORA: color: #00ff00 (verde neón)
+*/
+.recognition-title h4 {
+  color: #00ff00;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.severity-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.severity-badge.critical {
+  background: rgba(220, 38, 38, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(220, 38, 38, 0.5);
+}
+
+.severity-badge.high {
+  background: rgba(249, 115, 22, 0.2);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.5);
+}
+
+.severity-badge.medium {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+  border: 1px solid rgba(234, 179, 8, 0.5);
+}
+
+.severity-badge.low {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.recognition-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bounty-amount {
+  color: #00ff00;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+}
+
+.recognition-date {
+  color: #8892b0;
+  font-size: 0.85rem;
+  font-family: "Fira Code", monospace;
+}
+
+.recognition-description {
+  color: #8892b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.recognition-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.recognition-program {
+  color: #64ffda;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.cve-badge {
+  background: rgba(125, 249, 255, 0.1);
+  color: #7df9ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-family: "Fira Code", monospace;
+  border: 1px solid rgba(125, 249, 255, 0.3);
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.status-badge.resolved {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.status-badge.pending {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+  border: 1px solid rgba(234, 179, 8, 0.5);
+}
+
+/* Bug Bounty Article Card */
+/* 
+  CAMBIO APLICADO: Fondo negro (#000000) para unificar con Technical Projects
+  ANTES: background: #0a192f (azul oscuro)
+  AHORA: background: #000000 (negro puro)
+*/
+.bugbounty-article-card {
+  background: #000000;
+  border: 1px solid #233554;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.bugbounty-article-card:hover {
+  border-color: #64ffda;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.15);
+}
+
+.article-content {
+  flex: 1;
+}
+
+/* 
+  CAMBIO APLICADO: Título en verde neón (#00ff00) para coherencia con Technical Projects
+  ANTES: color: #ccd6f6 (gris azulado)
+  AHORA: color: #00ff00 (verde neón)
+*/
+.article-content h4 {
+  color: #00ff00;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.article-platform {
+  color: #64ffda;
+  font-weight: 600;
+}
+
+.article-read-time {
+  color: #8892b0;
+}
+
+.article-date {
+  color: #8892b0;
+  font-family: "Fira Code", monospace;
+}
+
+.article-link {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 1px solid #00ff00;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.article-link:hover {
+  background: rgba(0, 255, 0, 0.1);
+  transform: translateX(3px);
+}
+
+.article-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #8892b0;
+  border-color: #8892b0;
+}
+
+.article-link.disabled:hover {
+  transform: none;
+  background: transparent;
+}
+
+/* Bug Bounty Stats */
+/* 
+  CAMBIO APLICADO: Fondo negro (#000000) para unificar con Technical Projects
+  ANTES: background: linear-gradient(135deg, #0a192f 0%, #112240 100%) (degradado azul)
+  AHORA: background: #000000 (negro puro)
+*/
+.bugbounty-stats-container {
+  background: #000000;
+  border: 1px solid #233554;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 
+  CAMBIO APLICADO: Título en verde neón (#00ff00) para coherencia con Technical Projects
+  ANTES: color: #ccd6f6 (gris azulado)
+  AHORA: color: #00ff00 (verde neón)
+*/
+.bugbounty-stats-container h3 {
+  color: #00ff00;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(100, 255, 218, 0.05);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(100, 255, 218, 0.1);
+  border-color: rgba(100, 255, 218, 0.3);
+  transform: translateY(-3px);
+}
+
+.stat-card.highlight {
+  background: rgba(0, 255, 0, 0.1);
+  border-color: #00ff00;
+}
+
+.stat-card .stat-label {
+  display: block;
+  color: #8892b0;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card .stat-value {
+  display: block;
+  color: #00ff00;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+}
+
+.severity-breakdown {
+  margin-bottom: 2rem;
+}
+
+.severity-breakdown h4 {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.severity-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.severity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(100, 255, 218, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+}
+
+.severity-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.severity-dot.critical {
+  background: #ef4444;
+}
+
+.severity-dot.high {
+  background: #f97316;
+}
+
+.severity-dot.medium {
+  background: #eab308;
+}
+
+.severity-label {
+  color: #ccd6f6;
+  flex: 1;
+  font-weight: 500;
+}
+
+.severity-count {
+  color: #00ff00;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+  font-size: 1.2rem;
+}
+
+.platforms-list h4 {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.platform-badge {
+  background: #1a3a63;
+  color: #7df9ff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: "Fira Code", monospace;
+  border: 1px solid #2a4a73;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bugbounty-article-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .recognition-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-badge {
+    margin-left: 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

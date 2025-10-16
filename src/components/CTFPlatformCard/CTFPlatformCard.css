@@ -1,0 +1,771 @@
+/* src/components/CTFPlatformCard/CTFPlatformCard.css */
+
+/* 
+  CAMBIO APLICADO: Fondo negro (#000000) para unificar con Technical Projects
+  ANTES: background: linear-gradient(135deg, #0a192f 0%, #112240 100%) (degradado azul)
+  AHORA: background: #000000 (negro puro)
+*/
+.ctf-platform-card {
+  background: #000000;
+  border: 1px solid #233554;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.ctf-platform-card:hover {
+  border-color: #00ff00;
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.platform-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #233554;
+}
+
+.platform-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 
+  CAMBIO APLICADO: Título en verde neón (#00ff00) para coherencia con Technical Projects
+  ANTES: color: #ccd6f6 (gris azulado)
+  AHORA: color: #00ff00 (verde neón)
+*/
+.platform-header h3 {
+  color: #00ff00;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.user-id {
+  color: #64ffda;
+  font-size: 0.9rem;
+  font-family: "Fira Code", monospace;
+  background: rgba(100, 255, 218, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+.platform-username {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(100, 255, 218, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #64ffda;
+}
+
+.username-label {
+  color: #8892b0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.username-value {
+  color: #ccd6f6;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Fira Code", monospace;
+}
+
+.profile-link {
+  color: #00ff00;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.profile-link:hover {
+  color: #64ffda;
+  transform: translateX(3px);
+}
+
+.platform-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  background: rgba(100, 255, 218, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.2s ease;
+}
+
+.stat:hover {
+  background: rgba(100, 255, 218, 0.1);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+.stat-label {
+  display: block;
+  color: #8892b0;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  display: block;
+  color: #00ff00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+}
+
+.badges-container {
+  margin-top: 1.5rem;
+}
+
+.badges-container h4 {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #00ff00;
+  transition: all 0.2s ease;
+}
+
+.badge:hover {
+  background: rgba(0, 255, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.badge.locked {
+  opacity: 0.4;
+  border-color: #8892b0;
+  background: rgba(136, 146, 176, 0.05);
+}
+
+.badge.locked:hover {
+  transform: none;
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+}
+
+.badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.badge-name {
+  color: #ccd6f6;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.badge-date {
+  color: #64ffda;
+  font-size: 0.75rem;
+  font-family: "Fira Code", monospace;
+}
+
+/* No Stats/Badges Messages */
+.no-stats-message,
+.no-badges-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(136, 146, 176, 0.05);
+  border-radius: 8px;
+  border: 2px dashed #233554;
+  margin: 1rem 0;
+}
+
+.no-stats-message p,
+.no-badges-message p {
+  color: #8892b0;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.no-stats-message p:first-child,
+.no-badges-message p:first-child {
+  font-size: 1.2rem;
+  color: #ccd6f6;
+}
+
+.update-hint {
+  font-size: 0.85rem !important;
+  color: #64ffda !important;
+  margin-top: 1rem !important;
+}
+
+.update-hint code {
+  background: rgba(100, 255, 218, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: "Fira Code", monospace;
+  color: #00ff00;
+}
+
+/* CTF Competition Card */
+.ctf-competition-card {
+  background: #0a192f;
+  border: 1px solid #233554;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.ctf-competition-card:hover {
+  border-color: #64ffda;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.15);
+}
+
+.competition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.competition-header h4 {
+  color: #ccd6f6;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.competition-position {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+.competition-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.competition-date {
+  color: #8892b0;
+  font-size: 0.85rem;
+  font-family: "Fira Code", monospace;
+}
+
+.writeup-link {
+  color: #00ff00;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.writeup-link:hover {
+  color: #64ffda;
+}
+
+.writeup-link.disabled {
+  color: #8892b0;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .platform-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .platform-stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .badges-grid {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+  }
+
+  .ctf-platform-card {
+    padding: 1.5rem;
+  }
+
+  .portswigger-general-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .current-level-indicator {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   PORTSWIGGER ACADEMY - ESTILOS ESPECÍFICOS
+   ============================================ */
+
+.portswigger-stats-container {
+  margin-top: 1.5rem;
+}
+
+/* Indicador de nivel actual con progreso circular */
+.current-level-indicator {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(100, 255, 218, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.circular-progress-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circular-progress {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-bg {
+  fill: none;
+  stroke: #233554;
+  stroke-width: 8;
+}
+
+.circular-progress-bar {
+  fill: none;
+  stroke: #00ff00;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.circular-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-percentage {
+  display: block;
+  color: #00ff00;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+}
+
+.progress-label {
+  display: block;
+  color: #8892b0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.level-info {
+  flex: 1;
+}
+
+.current-level-title {
+  color: #8892b0;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.current-level-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #00ff00 0%, #64ffda 100%);
+  color: #0a192f;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.labs-to-next-level {
+  color: #ccd6f6;
+  font-size: 0.95rem;
+  margin: 0.75rem 0 0 0;
+  font-weight: 500;
+}
+
+/* Stats generales de PortSwigger */
+.portswigger-general-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Labs por nivel */
+.labs-by-level {
+  background: rgba(100, 255, 218, 0.03);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.labs-by-level h4 {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+}
+
+.level-progress-bar {
+  margin-bottom: 1.25rem;
+}
+
+.level-progress-bar:last-child {
+  margin-bottom: 0;
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.level-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.level-name.apprentice {
+  color: #64ffda;
+}
+
+.level-name.practitioner {
+  color: #ffa500;
+}
+
+.level-name.expert {
+  color: #ff4444;
+}
+
+.level-count {
+  color: #8892b0;
+  font-size: 0.9rem;
+  font-family: "Fira Code", monospace;
+}
+
+.progress-bar {
+  height: 24px;
+  background: #0a192f;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #233554;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+  position: relative;
+}
+
+.progress-fill.apprentice-fill {
+  background: linear-gradient(
+    90deg,
+    rgba(100, 255, 218, 0.3) 0%,
+    rgba(100, 255, 218, 0.6) 100%
+  );
+  border-right: 2px solid #64ffda;
+}
+
+.progress-fill.practitioner-fill {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 165, 0, 0.3) 0%,
+    rgba(255, 165, 0, 0.6) 100%
+  );
+  border-right: 2px solid #ffa500;
+}
+
+.progress-fill.expert-fill {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 68, 68, 0.3) 0%,
+    rgba(255, 68, 68, 0.6) 100%
+  );
+  border-right: 2px solid #ff4444;
+}
+
+.progress-text {
+  color: #ccd6f6;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* 💡 PARA AGREGAR MÁS NIVELES:
+   1. Duplica un bloque .level-name.NOMBRE
+   2. Duplica un bloque .progress-fill.NOMBRE-fill
+   3. Cambia los colores según tu preferencia
+   
+   Ejemplo para un nivel "Master":
+   
+   .level-name.master {
+       color: #9b59b6;
+   }
+   
+   .progress-fill.master-fill {
+       background: linear-gradient(90deg, rgba(155, 89, 182, 0.3) 0%, rgba(155, 89, 182, 0.6) 100%);
+       border-right: 2px solid #9b59b6;
+   }
+*/
+
+/* ============================================
+   TRYHACKME - BADGE IFRAME
+   ============================================ */
+
+.thm-badge-container {
+  margin: 1.5rem 0;
+  background: rgba(100, 255, 218, 0.03);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 255, 218, 0.03);
+}
+
+.thm-badge-container h4 {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.thm-iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00000000;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #00000000;
+  margin-bottom: 1rem;
+}
+
+.thm-iframe-wrapper iframe {
+  display: block;
+}
+
+.iframe-hint {
+  color: #8892b0;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 1rem 0 0 0;
+}
+
+.iframe-hint strong {
+  color: #64ffda;
+}
+
+.iframe-hint code {
+  background: rgba(100, 255, 218, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: "Fira Code", monospace;
+  color: #00ff00;
+}
+
+/* 💡 PARA MODIFICAR EL ESTILO DEL IFRAME:
+   - El tamaño se controla desde portfolioData.js (width, height)
+   - Para cambiar el fondo del contenedor: modifica background en .thm-iframe-wrapper
+   - Para agregar sombras: añade box-shadow a .thm-iframe-wrapper
+   - Para cambiar bordes: modifica border en .thm-iframe-wrapper
+*/
+
+/* ============================================
+   BADGES RESPONSIVE - HACK THE BOX Y OTROS
+   ============================================ */
+
+.badges-grid {
+  display: grid;
+  /* Diseño flexible: ajusta automáticamente según el espacio disponible
+       minmax(200px, 1fr) = mínimo 200px, máximo el espacio disponible
+       Para mostrar MÁS badges por fila, reduce el valor mínimo (ej: 150px)
+       Para mostrar MENOS badges por fila, aumenta el valor mínimo (ej: 250px)
+    */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* 💡 ALTERNATIVAS DE LAYOUT PARA BADGES:
+   
+   Opción 1 - Número fijo de columnas (3 badges por fila):
+   grid-template-columns: repeat(3, 1fr);
+   
+   Opción 2 - Más badges por fila (mínimo 150px):
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   
+   Opción 3 - Layout más espacioso (mínimo 250px):
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   
+   Opción 4 - Responsive manual:
+   @media (min-width: 1200px) { grid-template-columns: repeat(4, 1fr); }
+   @media (min-width: 768px) and (max-width: 1199px) { grid-template-columns: repeat(3, 1fr); }
+   @media (max-width: 767px) { grid-template-columns: repeat(2, 1fr); }
+*/
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #00ff00;
+  transition: all 0.2s ease;
+  /* Importante: min-width previene que los badges se compriman demasiado */
+  min-width: 0;
+}
+
+.badge:hover {
+  background: rgba(0, 255, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.badge.locked {
+  opacity: 0.4;
+  border-color: #8892b0;
+  background: rgba(136, 146, 176, 0.05);
+}
+
+.badge.locked:hover {
+  transform: none;
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0; /* Previene que el icono se comprima */
+}
+
+.badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0; /* Permite que el texto se trunque si es necesario */
+}
+
+.badge-name {
+  color: #ccd6f6;
+  font-size: 0.9rem;
+  font-weight: 600;
+  /* Truncar texto largo con ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge-date {
+  color: #64ffda;
+  font-size: 0.75rem;
+  font-family: "Fira Code", monospace;
+}
+
+/* 💡 PARA AJUSTAR EL ESPACIADO ENTRE BADGES:
+   - Cambiar gap en .badges-grid (actual: 1rem)
+   - Valores recomendados: 0.5rem (compacto), 1rem (normal), 1.5rem (espacioso)
+*/
+
+/* ============================================
+   RESPONSIVE - BREAKPOINTS ADICIONALES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .platform-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .platform-stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .badges-grid {
+    /* En móvil, solo 1 badge por fila para mayor legibilidad */
+    grid-template-columns: 1fr;
+  }
+
+  .ctf-platform-card {
+    padding: 1.5rem;
+  }
+
+  .portswigger-general-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .current-level-indicator {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .circular-progress-wrapper {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .badges-grid {
+    /* En tablet, 2 badges por fila */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .badges-grid {
+    /* En desktop, hasta 3 badges por fila (o más si hay espacio) */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}

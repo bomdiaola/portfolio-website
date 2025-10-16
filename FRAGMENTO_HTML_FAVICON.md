@@ -26,31 +26,40 @@ Este es el fragmento exacto que se agregó al archivo HTML principal:
       - favicon-96x96.png (alta resolución)
       - web-app-manifest-*.png (PWA en Android/Chrome)
     -->
-    
+
     <!-- Favicon SVG para navegadores modernos (Chrome, Firefox, Edge) -->
     <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
-    
+
     <!-- Favicon ICO para máxima compatibilidad (IE11, navegadores antiguos) -->
     <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
-    
+
     <!-- Favicon PNG de alta resolución (preferido por algunos navegadores) -->
-    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png" />
-    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="%PUBLIC_URL%/favicon-96x96.png"
+    />
+
     <!-- Apple Touch Icon para dispositivos iOS (Safari, Home Screen) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
+
     <!-- Web App Manifest para PWA (Progressive Web App) -->
     <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <!-- Color de tema para navegadores móviles (barra de direcciones en Android Chrome) -->
     <meta name="theme-color" content="#000000" />
     <meta name="author" content="Joan Garcés" />
-    
+
     <!-- Resto del contenido del <head> -->
   </head>
-  
+
   <body>
     <!-- Contenido del sitio -->
   </body>
@@ -62,63 +71,86 @@ Este es el fragmento exacto que se agregó al archivo HTML principal:
 ## Explicación Línea por Línea
 
 ### 1. Favicon SVG (Línea 24)
+
 ```html
 <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
 ```
+
 - **Propósito:** Favicon para navegadores modernos
 - **Formato:** SVG (escalable, mejor calidad)
 - **Navegadores:** Chrome 91+, Firefox 4+, Edge 79+, Safari 9+
 - **Ventaja:** Escala perfectamente a cualquier tamaño sin pérdida de calidad
 
 ### 2. Favicon ICO (Línea 27)
+
 ```html
 <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
 ```
+
 - **Propósito:** Fallback para navegadores antiguos
 - **Formato:** ICO (contiene múltiples tamaños: 16x16, 32x32, 48x48)
 - **Navegadores:** IE 11, Edge Legacy, navegadores antiguos
 - **Ventaja:** Máxima compatibilidad con navegadores legacy
 
 ### 3. Favicon PNG Alta Resolución (Línea 30)
+
 ```html
-<link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="96x96"
+  href="%PUBLIC_URL%/favicon-96x96.png"
+/>
 ```
+
 - **Propósito:** Favicon de alta calidad para pantallas Retina
 - **Formato:** PNG 96x96 píxeles
 - **Navegadores:** Preferido por algunos navegadores sobre SVG
 - **Ventaja:** Alta definición en displays de alta densidad de píxeles
 
 ### 4. Apple Touch Icon (Línea 33)
+
 ```html
-<link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="%PUBLIC_URL%/apple-touch-icon.png"
+/>
 ```
+
 - **Propósito:** Icono para dispositivos iOS (iPhone, iPad, iPod Touch)
 - **Formato:** PNG 180x180 píxeles con fondo sólido
 - **Uso:** Aparece cuando se guarda el sitio en la pantalla de inicio de iOS
 - **Importante:** iOS **ignora** otros formatos, solo usa apple-touch-icon
 
 ### 5. Web App Manifest (Línea 36)
+
 ```html
 <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
 ```
+
 - **Propósito:** Configuración de Progressive Web App (PWA)
 - **Contenido:** Define nombre de la app, iconos para Android, colores de tema
 - **Navegadores:** Chrome, Edge, Firefox, Opera (Android y Desktop)
 - **Funcionalidad:** Permite instalación como app nativa en Android
 
 ### 6. Meta Theme Color (Línea 41)
+
 ```html
 <meta name="theme-color" content="#000000" />
 ```
+
 - **Propósito:** Color de la barra de direcciones en navegadores móviles
 - **Valor:** `#000000` (negro - tema cybersecurity)
 - **Navegadores:** Chrome Android, Edge Android, Samsung Internet
 - **Efecto visual:** La barra de direcciones se colorea de negro en dispositivos móviles
 
 ### 7. Meta Author (Línea 42)
+
 ```html
 <meta name="author" content="Joan Garcés" />
 ```
+
 - **Propósito:** Metadato de autor del sitio web
 - **Uso:** SEO, metadatos, información de copyright
 - **Visible en:** Información de la página, buscadores
@@ -152,6 +184,7 @@ Este es el fragmento exacto que se agregó al archivo HTML principal:
 ```
 
 ### Propiedades:
+
 - **name:** Nombre completo de la app (se muestra en pantalla de instalación)
 - **short_name:** Nombre corto (se muestra debajo del icono en la pantalla de inicio)
 - **icons:** Array de iconos para diferentes tamaños
@@ -186,6 +219,7 @@ public/
 ### Verificar que los archivos carguen correctamente:
 
 1. **Inicia el servidor de desarrollo:**
+
    ```bash
    npm start
    ```
@@ -197,6 +231,7 @@ public/
 4. **Recarga la página (Ctrl + F5)**
 
 5. **Verifica que todos los archivos devuelvan código 200:**
+
    ```
    ✅ favicon.svg              → 200 OK
    ✅ favicon.ico              → 200 OK
@@ -216,16 +251,19 @@ public/
 ## 🎯 Tips de Validación Visual
 
 ### Desktop:
+
 - **Chrome/Edge:** Pestaña del navegador → debería mostrar calavera verde
 - **Firefox:** Pestaña del navegador → debería mostrar calavera verde
 - **Safari:** Pestaña del navegador → debería mostrar calavera verde
 
 ### Móvil:
+
 - **iOS Safari:** Agrega a pantalla de inicio → verifica el icono
 - **Android Chrome:** Agrega a pantalla de inicio → verifica el icono
 - **Android Chrome:** La barra de navegación debería ser negra (#000000)
 
 ### PWA:
+
 - **Chrome DevTools → Lighthouse:** Ejecuta auditoría PWA
 - Debería pasar todos los checks de iconos y manifest
 
