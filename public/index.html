@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
+
+    <!-- 💀 FAVICON CONFIGURATION - Cybersecurity Skull Theme -->
+    <!-- 
+      GUÍA RÁPIDA PARA ACTUALIZAR EL FAVICON EN EL FUTURO:
+      1. Diseña tu nuevo favicon SVG/PNG
+      2. Ve a https://realfavicongenerator.net/
+      3. Sube tu diseño y genera el paquete completo
+      4. Reemplaza todos los archivos en /public (favicon.ico, apple-touch-icon.png, etc.)
+      5. Actualiza el color de theme-color si cambias tu esquema de colores
+      
+      Los archivos actuales incluyen:
+      - favicon.svg (navegadores modernos)
+      - favicon.ico (navegadores antiguos: IE, Edge Legacy)
+      - apple-touch-icon.png (iOS Safari)
+      - favicon-96x96.png (alta resolución)
+      - web-app-manifest-*.png (PWA en Android/Chrome)
+    -->
     
-    <!-- 💀 Favicon de Calavera (Cybersecurity Theme) -->
-    <!-- SVG principal para navegadores modernos -->
-    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/skull-favicon.svg" />
-    <!-- Fallback para navegadores antiguos -->
-    <link rel="alternate icon" type="image/png" href="%PUBLIC_URL%/skull-favicon.svg" />
+    <!-- Favicon SVG para navegadores modernos (Chrome, Firefox, Edge) -->
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
     
+    <!-- Favicon ICO para máxima compatibilidad (IE11, navegadores antiguos) -->
+    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <!-- Favicon PNG de alta resolución (preferido por algunos navegadores) -->
+    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png" />
+    
+    <!-- Apple Touch Icon para dispositivos iOS (Safari, Home Screen) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    
+    <!-- Web App Manifest para PWA (Progressive Web App) -->
+    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Color de tema para navegadores móviles (barra de direcciones en Android Chrome) -->
     <meta name="theme-color" content="#000000" />
-    <meta name="author" content="Joan Garcés">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <meta name="author" content="Joan Garcés" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-</body>
-
+  </body>
 </html>
